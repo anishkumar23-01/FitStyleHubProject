@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    <!-- Additional head content if needed -->
+{% endblock %}
+
+{% block main %}
+    <!-- Hero Section -->
+    <section class="hero" style="background-color: #227454;">
+        <div class="container-fluid p-1">
+            <div class="jumbotron jumbotron-fluid card card-image" style="background-image: url(../static/img/wide\ banner.webp);">
+                <div class="row justify-content-center mt-3 pb-3">
+                    <!-- Additional content for the Hero section if needed -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        .card img {
+            transition: filter 0.3s ease-in-out;
+        }
+    
+        .card:hover img {
+            filter: brightness(80%);
+        }
+    </style>
+
+    <!-- Featured Categories -->
+    <section class="featured-category" style="background-color: #227454;">
+        <div class="container">
+            <!-- Men - Featured -->
+            <div class="category">
+                <h3 class="text-center">Men - Featured</h3>
+                <div class="card-deck mx-5 p-3">
+                    <a class="card col-md" href="{{ url_for('main.menlist') }}">
+                        <img class="card-img-top" src="../static/img/Joggers Men.webp" alt="Joggers Men">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Joggers</h5>
+                        </div>
+                    </a>
+                    <a class="card" href="{{ url_for('main.menlist') }}">
+                        <img class="card-img-top" src="../static/img/Tshirt and Tops Men.webp" alt="Tshirt">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Tshirts & Tops</h5>
+        
+                        </div>
+                    </a>
+                    <a class="card" style="width: 18rem;" href="{{ url_for('main.menlist') }}">
+                        <img class="card-img-top" src="../static/img/short2.webp" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Shorts</h5>
+        
+                        </div>
+                    </a>
+                    <a class="card" href="{{ url_for('main.menlist') }}">
+                        <img class="card-img-top" src="../static/img/VIEW ALL MEN.webp" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">View All</h5>
+        
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Women - Featured -->
+            <div class="category">
+                <h3 class="text-center">Women - Featured</h3>
+                <div class="card-deck mx-5 p-3">
+            
+
+                    <a class="card" href="{{ url_for('main.womenlist') }}">
+                        <img class="card-img-top" src="../static/img/Leggings women.webp" alt="Leggings">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Leggings</h5>
+        
+                        </div>
+                    </a>
+        
+        
+                    <a class="card" href="{{ url_for('main.womenlist') }}">
+                        <img class="card-img-top" src="../static/img/Sports bra women.webp" alt="Sports Bra">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Sports Bras</h5>
+        
+                        </div>
+                    </a>
+                    <a class="card" href="{{ url_for('main.womenlist') }}">
+                        <img class="card-img-top" src="../static/img/Shorts women.webp" alt="Shorts women">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Shorts</h5>
+        
+                        </div>
+                    </a>
+                    <a class="card" href="{{ url_for('main.womenlist') }}">
+                        <img class="card-img-top" src="../static/img/VIEWALL WOMEN.webp" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">View All</h5>
+        
+                        </div>
+                    </a>
+        
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

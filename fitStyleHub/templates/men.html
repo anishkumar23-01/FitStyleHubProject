@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block main %}
+<!-- display product  for the specific category -->
+<section>
+
+    <style>
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card img {
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .card:hover img {
+            filter: brightness(80%);
+        }
+
+        .card-a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <div class="card-columns">
+        <!-- each tour is a bootstrap card -->
+        {% for men in mens%}
+        <div class="card">
+            <img class="card-img-top" src="{{url_for('static', filename='img/'+men.image)}}" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">{{men.name}}</h4>
+                <p class="card-text">{{men.description}}</p>
+            </div>
+            <div class="card-a">
+                <a href="{{ url_for('main.product', category_id=men.id) }}" class="btn btn-secondary">Shop</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}

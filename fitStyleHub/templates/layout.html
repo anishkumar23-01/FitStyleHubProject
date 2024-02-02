@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Fit Style Hub">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofP+WiKgxyFIlCFAj4xkwj5gy5l8aU2zI" crossorigin="anonymous">
+
+
+    <style>
+        /* Custom CSS for the first navigation bar */
+        .custom-nav {
+            padding: 5px;
+            /* Adjust the padding to reduce thickness */
+            font-size: 10px;
+            /* Adjust the font size */
+        }
+
+        .custom-nav .nav-link {
+            font-size: 10px;
+            /* Adjust the font size */
+        }
+    </style>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #585858;
+        }
+
+        .jumbotron-fluid {
+            padding: 0;
+        }
+
+        .jumbotron {
+            background-size: cover;
+            background-position: center top;
+            color: #585858;
+            /* Adjust text color based on your image */
+            height: 300px;
+        }
+
+        .jumbotron img {
+            width: 80%;
+            height: 400px;
+        }
+
+        .category-card {
+            width: 50%;
+            /* Adjust the width as needed */
+            margin: 0 10px;
+            /* Adjust the margin between cards */
+            background-color: #585858;
+
+        }
+    </style>
+
+
+
+    <title>FitStyleHub-Home</title>
+</head>
+
+<body>
+    <header>
+        <!--contains navigation bar, logo, search box-->
+
+        <!-- First Navigation Bar -->
+        <div>
+
+            <ul class="nav justify-content-end custom-nav"> <!-- Added custom-nav class -->
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Login/SignUp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Help</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!--Second Nav bar-->
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="background-color: #97cab6;">
+
+            <!--logo and title-->
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="../static/img/Logo.png" alt="Logo" style="width : 100px">
+                </a>
+                <h2>FitStyleHub</h3>
+
+
+                    <!-- Navbar Toggler for small screens -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navbar Links -->
+                    <div class="collapse navbar-collapse" id="navbarNav" style="margin-right: 20px;">
+                        <ul class="navbar-nav mx-auto d-flex justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="{{ url_for('main.menlist') }}">Men</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="{{ url_for('main.womenlist') }}">Women</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="accessories.html">Accessories</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Search form -->
+                            <div class="md-form mt-0">
+                                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                            </div>
+
+                            <!--icons-->
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">
+                                    <img src="../static/img/wishlist icon.png" alt="wishlist Icon" width="24"
+                                        height="24">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="{{ url_for('main.order') }}">
+                                    <img src="../static/img/cart icon.png" alt="Cart Icon" width="24" height="24">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">
+                                    <img src="../static/img/account icon.png" alt="Account Icon" width="24" height="24">
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+            </div>
+        </nav>
+
+
+
+    </header>
+
+
+
+
+    </div>
+
+    </div>
+
+
+
+    </div>
+
+    <div class="container-fluid">
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Footer of the website -->
+    <footer class="footer">
+        <div class="text-center py-2 bg-light">
+            <span class="text-dark">Copyright &copy; FitStyleHub 2023</span>
+        </div>
+    </footer>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+
+</body>
+
+</html>
